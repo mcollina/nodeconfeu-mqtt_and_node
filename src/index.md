@@ -58,3 +58,14 @@ Inline HTML supported so you can control styling:
     <td style="border: solid 2px rgb(134,136,118); padding: 2em; text-align: center;" colspan=4>I don't know, but it's awesome!</td>
   </tr>
 </table>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h2 data-bespoke-bullet>Animated bullet-points</h2>
+
+<ul>
+  <li data-bespoke-bullet>Bullet points</li>
+  <li data-bespoke-bullet>... are animated</li>
+  <li data-bespoke-bullet>... by adding the</li>
+  <li data-bespoke-bullet>... `data-bespoke-bullet` attribute to html elements</li>
+</ul>

@@ -23,6 +23,10 @@
       
         <section>
           <h1>NodeConf.eu Themed Slides</h1>
+<p style="margin: 100px auto 0 auto; text-align: center; font-size: 10px;">
+<em>(use -&gt; and &lt;- to navigate)</em>
+</p>
+
 
         </section>
       
@@ -45,7 +49,7 @@
       
         <section>
           <h2>Authored in Markdown</h2>
-<p>Single <em>index.md</em> file, with a <em>build.js</em> script that converts to the slides, including formatting and even syntax highlighting.</p>
+<p>Single <em>index.md</em> file (like <a href="https://raw.github.com/rvagg/campjs-2013-learn-you-node/master/src/index.md">this one</a>), with a <em>build.js</em> (like <a href="https://raw.github.com/rvagg/campjs-2013-learn-you-node/master/src/build.js">this one</a>) script that converts to the slides, including formatting and even syntax highlighting.</p>
 <ul>
 <li><em>build.js</em> also has a <code>--watch</code></li>
 </ul>
@@ -77,6 +81,19 @@
 
         </section>
       
+        <section>
+          <h2 data-bespoke-bullet>Animated bullet-points</h2>
+
+<ul>
+  <li data-bespoke-bullet>Bullet points</li>
+  <li data-bespoke-bullet>... are animated</li>
+  <li data-bespoke-bullet>... by adding the</li>
+  <li data-bespoke-bullet>... <code>data-bespoke-bullet</code> attribute to html elements</li>
+</ul>
+
+
+        </section>
+      
 
       </article>
 
@@ -89,7 +106,10 @@
 
     <script src="js/bespoke.min.js"></script>
     <script src="js/bespoke-hash.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/bespoke-bullets.min.js"></script>
+    <script>
+      bespoke.horizontal.from('article', { hash: true, bullets: true })
+    </script>
   </body>
 </script>
 </body>

@@ -227,6 +227,10 @@ body, section.bespoke-slide {
   margin-bottom: 0.5em;
 }
 
+.bespoke-bullet-inactive {
+  display: none;
+}
+
 .highlight {
   margin: 0.25em 0.5em 1em 0.5em;
   border-radius: 3px;
