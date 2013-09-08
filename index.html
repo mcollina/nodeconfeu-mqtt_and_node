@@ -157,14 +157,15 @@ Measured on Android
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu&quot;</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">packet</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">packet</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">topic</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">([</span><span class="nx">topic</span><span class="p">,</span> <span class="nx">payload</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">));</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu&quot;</span><span class="p">,</span> <span class="s2">&quot;hello vikings!&quot;</span><span class="p">);</span>
 </pre></div>
 
+<p><a href="#" onclick="runCurrentScript(); return false;">Run!</a></p>
 
         </section>
       
@@ -211,30 +212,35 @@ and
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">mqtt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mqtt&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">mqtt</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
-  <span class="nx">clientid</span><span class="o">:</span> <span class="s2">&quot;nodeconfslides&quot;</span><span class="p">,</span>
+  <span class="nx">clientId</span><span class="o">:</span> <span class="s2">&quot;nodeconfslides&quot;</span><span class="p">,</span>
   <span class="nx">clean</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">}).</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu/offline&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">qos</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;subscribe done!&quot;</span><span class="p">);</span>
   <span class="c1">// called when the subscribe is successful</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 
+<p><a href="#" onclick="runCurrentScript(true); return false;">Run!</a></p>
 
         </section>
       
         <section>
           <h2>Offline Mode</h2>
 <p>Then, someone else publish an important message:</p>
-<div class="highlight"><pre><span class="c1">// anonymous publisher</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mqtt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mqtt&quot;</span><span class="p">);</span>
+
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">mqtt</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu/offline&quot;</span><span class="p">,</span> 
                <span class="s2">&quot;hello vikings!&quot;</span><span class="p">,</span> 
                <span class="p">{</span> <span class="nx">qos</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;publish done!&quot;</span><span class="p">);</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 
+<p><a href="#" onclick="runCurrentScript(); return false;">Run!</a></p>
 
         </section>
       
@@ -242,18 +248,21 @@ and
           <h2>Offline Mode</h2>
 <p>When our first client reconnect, it receives all the missed messages, in
 order.</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">mqtt</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
-  <span class="nx">clientid</span><span class="o">:</span> <span class="s2">&quot;nodeconfslides&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mqtt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mqtt&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">mqtt</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
+  <span class="nx">clientId</span><span class="o">:</span> <span class="s2">&quot;nodeconfslides&quot;</span><span class="p">,</span>
   <span class="nx">clean</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">});</span>
 
 <span class="c1">// the offline messages are delivered in order!</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">packet</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">packet</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">topic</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">([</span><span class="nx">topic</span><span class="p">,</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">toString</span><span class="p">()].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">));</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 
+<p><a href="#" onclick="runCurrentScript(true); return false;">Run!</a></p>
 
         </section>
       
@@ -312,10 +321,12 @@ GitHub: @mcollina
 
     </div>
 
+    <script src="js/jquery.js"></script>
     <script src="js/bespoke.min.js"></script>
     <script src="js/bespoke-hash.min.js"></script>
     <script src="js/bespoke-bullets.min.js"></script>
     <script src="js/bespoke-state.min.js"></script>
+    <script src="js/run.js"></script>
     <script src="bundle.js"></script>
     <script>
       bespoke.horizontal.from('article', { hash: true, bullets: true })

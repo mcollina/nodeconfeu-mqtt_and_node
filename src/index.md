@@ -127,13 +127,15 @@ var client = mqtt.createClient();
 
 client.subscribe("nodeconf/eu");
 
-client.on("message", function(packet) {
-  alert(packet.payload);
+client.on("message", function(topic, payload) {
+  alert([topic, payload].join(": "));
   client.end();
 });
 
 client.publish("nodeconf/eu", "hello vikings!");
 ```
+
+<a href="#" onclick="runCurrentScript(); return false;">Run!</a>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -179,13 +181,16 @@ First, subscribe and disconnect.
 var mqtt = require("mqtt");
 
 var client = mqtt.createClient({
-  clientid: "nodeconfslides",
+  clientId: "nodeconfslides",
   clean: false
 }).subscribe("nodeconf/eu/offline", { qos: 1 }, function() {
+  alert("subscribe done!");
   // called when the subscribe is successful
   client.end();
 });
 ```
+
+<a href="#" onclick="runCurrentScript(true); return false;">Run!</a>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -194,15 +199,19 @@ var client = mqtt.createClient({
 Then, someone else publish an important message:
 
 ```js
-// anonymous publisher
+var mqtt = require("mqtt");
+
 var client = mqtt.createClient();
 
 client.publish("nodeconf/eu/offline", 
                "hello vikings!", 
                { qos: 1 }, function() {
+  alert("publish done!");
   client.end();
 });
 ```
+
+<a href="#" onclick="runCurrentScript(); return false;">Run!</a>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -212,17 +221,21 @@ When our first client reconnect, it receives all the missed messages, in
 order.
 
 ```js
+var mqtt = require("mqtt");
+
 var client = mqtt.createClient({
-  clientid: "nodeconfslides",
+  clientId: "nodeconfslides",
   clean: false
 });
 
 // the offline messages are delivered in order!
-client.on("message", function(packet) {
-  alert(packet.payload);
+client.on("message", function(topic, payload) {
+  alert([topic, payload.toString()].join(": "));
   client.end();
 });
 ```
+
+<a href="#" onclick="runCurrentScript(true); return false;">Run!</a>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

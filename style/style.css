@@ -54,6 +54,7 @@ body, section.bespoke-slide {
   bottom: 0;
   right: 0;
   z-index: 101;
+  pointer-events: none;
 }
 
 .nodeconfeu-scroll .left {
