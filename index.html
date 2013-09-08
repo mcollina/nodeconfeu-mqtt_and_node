@@ -125,6 +125,48 @@ Measured on Android
         </section>
       
         <section>
+          <h1>Let&#39;s move to the #code!</h1>
+
+        </section>
+      
+        <section>
+          <h2>MQTT.js</h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; 20k packets/second parser</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; Stream based</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; High-Level Client API</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; Low-Level Server</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; Built by @adamvr and @mcollina</h3>
+
+        </section>
+      
+        <section>
+          <h2>Instant Gratification</h2>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mqtt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mqtt&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">mqtt</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">packet</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">packet</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
+  <span class="nx">client</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;nodeconf/eu&quot;</span><span class="p">,</span> <span class="s2">&quot;hello vikings!&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+        </section>
+      
+        <section>
+          <h2>How the hell can it work on a Browser?</h2>
+<ul>
+<li>MQTT can be tunnelled inside WebSocket/Engine.io/any binary stream</li>
+<li>The previous example runned inside the browser using WebSocket</li>
+<li>Thanks @substack for Browserify</li>
+<li>Not yet released (sorry :/)</li>
+</ul>
+
+        </section>
+      
+        <section>
           <h2>Heading 2</h2>
 <h3>Heading 3</h3>
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; more 3rd-level heading</h3>

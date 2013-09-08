@@ -94,6 +94,45 @@ Measured on Android
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Let's move to the #code!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## MQTT.js
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&hellip; 20k packets/second parser
+### &nbsp;&nbsp;&nbsp;&nbsp;&hellip; Stream based
+### &nbsp;&nbsp;&nbsp;&nbsp;&hellip; High-Level Client API
+### &nbsp;&nbsp;&nbsp;&nbsp;&hellip; Low-Level Server
+### &nbsp;&nbsp;&nbsp;&nbsp;&hellip; Built by @adamvr and @mcollina
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+## Instant Gratification
+
+```js
+var mqtt = require("mqtt");
+
+var client = mqtt.createClient();
+client.subscribe("nodeconf/eu", function(packet) {
+  alert(packet.payload);
+  client.disconnect();
+});
+
+client.publish("nodeconf/eu", "hello vikings!");
+```
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## How the hell can it work on a Browser?
+
+* MQTT can be tunnelled inside WebSocket/Engine.io/any binary stream
+* The previous example runned inside the browser using WebSocket
+* Thanks @substack for Browserify
+* Not yet released (sorry :/)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ## Heading 2
 
 ### Heading 3
