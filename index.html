@@ -140,6 +140,7 @@ Measured on Android
       
         <section>
           <h2>MQTT.js</h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; <a href="http://npm.im/mqtt">http://npm.im/mqtt</a></h3>
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; 20k packets/second parser</h3>
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; Stream based</h3>
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&hellip; High-Level Client API</h3>
@@ -170,7 +171,7 @@ Measured on Android
         <section>
           <h2>How the hell can it work on a Browser?</h2>
 <ul>
-<li>MQTT can be tunnelled inside WebSocket/Engine.io/any binary stream</li>
+<li>MQTT.js can be tunnelled inside WebSocket/Engine.io/any binary stream</li>
 <li>The previous example runned inside the browser using WebSocket</li>
 <li>Thanks @substack for Browserify</li>
 <li>Not yet released (sorry :/), but coming later this month (see:
@@ -184,13 +185,16 @@ and
         <section>
           <h2>Mosca: MQTT broker in Node.js</h2>
 <ul>
-<li>Standalone usage, through <code>$ mosca</code></li>
-<li>Embeddable in your app/infrastructure</li>
-<li>Pluggable API</li>
-<li>Support websockets
-(not yet published, <a href="https://github.com/mcollina/mosca/pull/44">mcollina/mosca#44</a>)</li>
-<li>Fast, 10k+ messages routed per second</li>
+  <li data-bespoke-bullet> <a href="http://npm.im/mosca">http://npm.im/mosca</a></li>
+  <li data-bespoke-bullet> Standalone usage, through <code>$ mosca</code></li>
+  <li data-bespoke-bullet> Embeddable in your app</li>
+  <li data-bespoke-bullet> Authentication APIs</li>
+  <li data-bespoke-bullet> Supports AMQP, Mongo, and MQTT as pub/sub backends (if you need them)</li>
+  <li data-bespoke-bullet> Needs a DB, such as LevelUp, Mongo, or Redis</li>
+  <li data-bespoke-bullet> Support websockets (not yet published, <a href="https://github.com/mcollina/mosca/pull/44">mcollina/mosca#44</a>)</li>
+  <li data-bespoke-bullet> Fast, 10k+ messages routed per second</li>
 </ul>
+
 
         </section>
       
