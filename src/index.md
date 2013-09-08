@@ -1,17 +1,42 @@
 
-# NodeConf.eu Themed Slides
+# MQTT and Node.js
 
-<p style="margin: 100px auto 0 auto; text-align: center; font-size: 10px;">
-*(use -&gt; and &lt;- to navigate)*
+<p style="text-align: center; font-size: 20px;">
+A messagging protocol for the Internet of Things
 </p>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## Browser stuff
+<h2 style="position: absolute; top: 50px">We #code</h2>
+<img src="img/laptop.jpg" style="height: 450px; margin-left: -30px;
+margin-top: -20px;
+box-shadow:inset 0 1px 2px
+rgba(0,0,0,0.075),0 0 5px rgba(255,255,255,0.5)">
 
-Designed for Chrome, works well enough across other browsers for sharing afterwards.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Zoom in till it fits (Ctrl +, or whatever your OS variant is)
+## How do we #code an app?
+
+<img src="img/touch.svg" style="margin-top: 50px; margin-left: 50px;
+height: 150px;">
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## We call a Web Server!
+
+<img src="img/web server.svg" style="margin-top: 10px; margin-left: 50px;
+height: 230px;">
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h2 style="position: absolute; top: 30px; color: white">
+How do we #code a Thing?
+</h2>
+
+<img src="img/rasp.jpg" style="height: 370px;
+margin-top: 5px;
+margin-left: -30px; box-shadow:inset 0 1px 2px
+rgba(0,0,0,0.075),0 0 5px rgba(255,255,255,0.5)">
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
