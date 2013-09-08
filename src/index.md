@@ -40,6 +40,60 @@ rgba(0,0,0,0.075),0 0 5px rgba(255,255,255,0.5)">
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<h2 data-bespoke-bullet>How do we #code a Thing?</h2>
+
+Problems:
+<ul>
+  <li data-bespoke-bullet>Power Consumpution/Battery</li>
+  <li data-bespoke-bullet>Sits behind a firewall</li>
+  <li data-bespoke-bullet>Reacts to real-world events fast</li>
+  <li data-bespoke-bullet>Scalable solution?</li>
+</ul>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<img src="img/mqttorg.svg" style="margin-top: 100px; margin-left: 40px;
+width: 350px;">
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## MQTT
+
+<img src="img/pubsub.png" style="height: 400px; margin-top: -100px;
+margin-left: -50px;">
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h2 data-bespoke-bullet>MQTT</h3>
+
+### Facts
+<ul>
+  <li data-bespoke-bullet>Binary Protocol</li>
+  <li data-bespoke-bullet>Publish/Subscribe</li>
+  <li data-bespoke-bullet>Standard</li>
+  <li data-bespoke-bullet>Offline/Disconnected Mode</li>
+</ul>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h2 data-bespoke-bullet>MQTT vs WebSocket</h3>
+
+It's better to use MQTT or WebSocket for live notification in our apps?
+<ul>
+  <li data-bespoke-bullet>93x faster throughput</li>
+  <li data-bespoke-bullet>11.89x less battery to send</li>
+  <li data-bespoke-bullet>170.9x less battery to receive</li>
+  <li data-bespoke-bullet>1/2 as much power to keep connection open</li>
+  <li data-bespoke-bullet>8x less network overhead</li>
+</ul>
+
+<p data-bespoke-bullet style="font-size: 10px; margin-top:10px;">
+Measured on Android
+(Source: http://mobilebit.wordpress.com/2013/05/03/rest-is-for-sleeping-mqtt-is-for-mobile/)
+</p>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ## Heading 2
 
 ### Heading 3
