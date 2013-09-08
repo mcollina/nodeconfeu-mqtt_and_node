@@ -228,10 +228,10 @@ var client = mqtt.createClient({
   clean: false
 });
 
-// the offline messages are delivered in order!
 client.on("message", function(topic, payload) {
   alert([topic, payload.toString()].join(": "));
-  client.end();
+
+  setTimeout(client.end.bind(client), 1000);
 });
 ```
 
