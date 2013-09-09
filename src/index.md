@@ -145,7 +145,7 @@ client.publish("nodeconf/eu", "hello vikings!");
 * The previous example runned inside the browser using WebSocket
 * Thanks @substack for Browserify
 * Not yet released (sorry :/), but coming later this month (see:
-  [adamvr/MQTT.js#PULL_ME](https://github.com/adamvr/MQTT.js/pull/PULL_ME)
+  [adamvr/MQTT.js#130](https://github.com/adamvr/MQTT.js/pull/130)
   and
   [mcollina/mqtt.js-over-websockets](https://github.com/mcollina/mqtt.js-over-websockets))
 
