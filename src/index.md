@@ -85,24 +85,6 @@ margin-left: -50px;">
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<h2 data-bespoke-bullet>MQTT vs WebSocket</h3>
-
-It's better to use MQTT or WebSocket for live notification in our apps?
-<ul>
-  <li data-bespoke-bullet>93x faster throughput</li>
-  <li data-bespoke-bullet>11.89x less battery to send</li>
-  <li data-bespoke-bullet>170.9x less battery to receive</li>
-  <li data-bespoke-bullet>1/2 as much power to keep connection open</li>
-  <li data-bespoke-bullet>8x less network overhead</li>
-</ul>
-
-<p data-bespoke-bullet style="font-size: 10px; margin-top:10px;">
-Measured on Android
-(Source: http://mobilebit.wordpress.com/2013/05/03/rest-is-for-sleeping-mqtt-is-for-mobile/)
-</p>
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 # Let's move to the #code!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
